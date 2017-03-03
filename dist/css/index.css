@@ -449,7 +449,7 @@ template {
 
 body {
   background-color: antiquewhite;
-  color: #000; }
+  color: #999; }
 
 .container .title {
   font-size: 2rem;
@@ -464,7 +464,7 @@ body {
     list-style: none; }
     .broad-list .item .time {
       width: 100%;
-      text-indent: .5em;
+      text-indent: 2%;
       position: relative;
       padding-bottom: .5rem; }
       .broad-list .item .time:before, .broad-list .item .time:after {
@@ -495,12 +495,6 @@ body {
     box-shadow: 0 0 2rem 0.5rem #1E90FF; }
   100% {
     box-shadow: 0 0 1rem 0.1rem #1E90FF; } }
-      .broad-list .item .time:after {
-        width: .6rem;
-        height: .6rem;
-        left: -.4rem;
-        top: .2rem;
-        background-color: antiquewhite; }
     .broad-list .item img, .broad-list .item .text {
       display: block;
       width: 96%;
