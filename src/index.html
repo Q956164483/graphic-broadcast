@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=0.1">
+    <title>图文直播</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body class="box box-ver">
+    <div id="app" class="container box box-ver">
+    	<div class="title" v-text="broadData.title">
+    	</div>
+        <ul class="broad-list box box-ver">
+            <li v-for="item in broadData.list" class="item box-fh">
+                <div class="time" v-text="item.create_time"></div>
+                <div class="content">
+                    <img v-for="img in item.images" :src="img" alt="">
+                    <div class="text" v-text="item.text"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="SOHUCS" sid="zhibo20170303" ></div>
+	<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" 
+	src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=cysSoaMKi&conf=prod_71f67e5aef653203f5072ca490059266">
+	</script>
+    <script src="js/vue.js"></script>
+    <script src="js/vue-resource.js"></script>
+</body>
+<script>
+   var vm = new Vue({
+       el:"#app",
+       data: {
+           broadData:[]
+       },
+       mounted: function(){
+           this.getBroadList();
+       },
+       methods:{
+           getBroadList: function(){
+               var _this = this;
+                this.$http.get('data/broadData.json').then(function(res){
+                    console.log(res);
+                    _this.broadData = res.body.data;
+                })
+           }
+       }
+   })
+</script>
+</html>

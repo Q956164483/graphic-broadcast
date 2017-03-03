@@ -1,0 +1,73 @@
+@import "reset";
+@import "mixins";
+@import "box";
+$color-bg:antiquewhite;
+$color-line:#1E90FF;
+body{
+	background-color:$color-bg;
+	color:#000;
+}
+.container{
+	.title{
+		font-size:2rem;
+		width:90%;
+		margin:0 auto;
+		text-align:center;
+	}
+}
+.broad-list{
+	margin:1rem;
+	border-left:.2rem solid $color-line;
+	.item{
+		list-style: none;
+		.time{
+			width:100%;
+            text-indent:.5em;
+            position:relative;
+            padding-bottom: .5rem;
+            &:before,&:after{
+            	position: absolute;
+            	content: '';
+            	display: block;
+            	border-radius:50%;
+            }
+            &:before{
+            	width:1rem;
+            	height:1rem;
+            	left:-.6rem;
+            	background-color: $color-line;
+            	@include animation(shadow 2s infinite);
+            	@include keyframes(shadow){
+					0%{
+						box-shadow:0 0 1rem .1rem $color-line;
+					}
+					50%{
+						box-shadow:0 0 2rem .5rem $color-line;
+					}
+					100%{
+						box-shadow:0 0 1rem .1rem $color-line;
+					}
+            	}
+            }
+            &:after{
+            	width:.6rem;
+            	height:.6rem;
+            	left:-.4rem;
+            	top:.2rem;
+            	background-color: $color-bg;
+            }
+		}
+		img,.text{
+			display:block;
+			width:96%;
+			margin:0 auto;
+		}
+		img{
+			height:auto;
+		}
+		.text{
+			padding-bottom:2rem;
+			font-size:1rem;
+		}
+	}
+}
