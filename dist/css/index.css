@@ -452,7 +452,8 @@ body {
   color: #999; }
 
 .container .title {
-  font-size: 2rem;
+  padding-top: 1rem;
+  font-size: 1.5rem;
   width: 90%;
   margin: 0 auto;
   text-align: center; }
@@ -504,3 +505,9 @@ body {
     .broad-list .item .text {
       padding-bottom: 2rem;
       font-size: 1rem; }
+
+#SOHUCS {
+  border-top: 1px dashed #FFF; }
+
+#SOHUCS #SOHU_MAIN .module-mobile-cmt-header {
+  background-color: transparent; }
