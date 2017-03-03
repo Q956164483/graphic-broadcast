@@ -2,10 +2,11 @@
 @import "mixins";
 @import "box";
 $color-bg:antiquewhite;
-$color-line:#1E90FF;
+$color-line:#1E90FF;//
+$color-text:#999;
 body{
 	background-color:$color-bg;
-	color:#000;
+	color:$color-text;
 }
 .container{
 	.title{
@@ -22,7 +23,7 @@ body{
 		list-style: none;
 		.time{
 			width:100%;
-            text-indent:.5em;
+            text-indent:2%;
             position:relative;
             padding-bottom: .5rem;
             &:before,&:after{
@@ -49,13 +50,13 @@ body{
 					}
             	}
             }
-            &:after{
-            	width:.6rem;
-            	height:.6rem;
-            	left:-.4rem;
-            	top:.2rem;
-            	background-color: $color-bg;
-            }
+            // &:after{
+            // 	width:.6rem;
+            // 	height:.6rem;
+            // 	left:-.4rem;
+            // 	top:.2rem;
+            // 	background-color: $color-bg;
+            // }
 		}
 		img,.text{
 			display:block;
@@ -70,4 +71,10 @@ body{
 			font-size:1rem;
 		}
 	}
+}
+#SOHUCS{
+	border-top:1px dashed #FFF;
+}
+#SOHUCS #SOHU_MAIN .module-mobile-cmt-header{
+	background-color:rgba(0,0,0,0);
 }

@@ -62,12 +62,12 @@ gulp.task('css',['sass'], function() {
 });
 // js合并压缩
 gulp.task('js', function() {
-    return gulp.src(['src/js/*.js','!src/js/all.js'])
+    return gulp.src(['src/js/vue.js','src/js/vue-resource.js'])
             //.pipe(jshint())
             //.pipe(jshint.reporter('default'))
-            //.pipe(concat('concat.js'))
+            .pipe(concat('concat.js'))
             //.pipe(rename({ suffix: '.min' }))
-            //.pipe(uglify())
+            .pipe(uglify())
             .pipe(gulp.dest('dist/js'))
             .pipe(reload({stream: true}))
             //.pipe(notify({ message: 'JS task complete' }));
