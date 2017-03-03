@@ -12,18 +12,19 @@
     	</div>
         <ul class="broad-list box box-ver">
             <li v-for="item in broadData.list" class="item box-fh">
-                <div class="time" v-text="item.create_time"></div>
+                <div class="time" v-text="">
+                	{{item.create_time|formatDate}}
+                </div>
                 <div class="content">
                     <img v-for="img in item.images" :src="img" alt="">
-                    <div class="text" v-text="item.text"></div>
+                    <div class="text" v-text="">{{item.text|formatHtml}}</div>
                 </div>
             </li>
         </ul>
     </div>
     <div id="SOHUCS" sid="zhibo20170303" ></div>
-	<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" 
-	src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=cysSoaMKi&conf=prod_71f67e5aef653203f5072ca490059266">
-	</script>
+  	<script id="changyan_mobile_js" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=cysSoaMKi&conf=prod_71f67e5aef653203f5072ca490059266">
+  	</script>
     <script src="js/vue.js"></script>
     <script src="js/vue-resource.js"></script>
 </body>
@@ -35,6 +36,15 @@
        },
        mounted: function(){
            this.getBroadList();
+       },
+       filters:{
+           formatDate:function(value){
+               return new Date(value).toLocaleString();
+           },
+           formatHtml:function(value){
+              var regx = /<[^>]*>|<\/[^>]*>/gm;
+              return value.replace(regx,"");
+           }
        },
        methods:{
            getBroadList: function(){
