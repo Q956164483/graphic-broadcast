@@ -47,7 +47,7 @@ gulp.task('sprite',[], function () {
 gulp.task('css',['sass'], function() {
     return gulp.src(['src/css/*.css'])
            //.pipe(concat('concat.css'))
-           //.pipe(minifycss())
+           .pipe(minifycss())
            //.pipe(rename({ suffix: '.min' }))
            // .pipe(autoprefixer({
            //      browsers:['last 4 versions'],
@@ -62,7 +62,7 @@ gulp.task('css',['sass'], function() {
 });
 // js合并压缩
 gulp.task('js', function() {
-    return gulp.src(['src/js/vue.js','src/js/vue-resource.js'])
+    return gulp.src(['src/js/vue.js','src/js/vue-resource.js','src/js/vue-lazyload.js'])
             //.pipe(jshint())
             //.pipe(jshint.reporter('default'))
             .pipe(concat('concat.js'))

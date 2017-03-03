@@ -16,7 +16,7 @@
                 	
                 </div>
                 <div class="content">
-                    <img v-for="img in item.images" :src="img" alt="">
+                    <img v-for="img in item.images" v-lazy="img" alt="">
                     <div class="text" v-text="formatHtml(item.text)"></div>
                 </div>
             </li>
@@ -38,6 +38,9 @@
     <script src="js/concat.js"></script>
 </body>
 <script>
+   Vue.use(VueLazyload,{
+    //loading:'images/loading.png'
+   })
    var vm = new Vue({
        el:"#app",
        data: {
